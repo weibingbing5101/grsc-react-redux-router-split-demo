@@ -4,7 +4,7 @@ let home = (state = initState, action = {}) => {
   switch (action.type) {
     case 'ADDD':
       return {...state, number: state.number + 1};
-    case 'SUB':
+    case 'SUBB':
       return {...state, number: state.number - 1};
     default:
       return state;

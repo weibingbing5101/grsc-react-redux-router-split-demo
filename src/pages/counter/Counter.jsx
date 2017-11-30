@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+require('./Counter.less');
 
 export default class Counter extends Component{
 	constructor(props){

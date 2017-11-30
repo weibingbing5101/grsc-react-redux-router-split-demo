@@ -18,7 +18,8 @@ module.exports = {
     module: {
         rules: [
             { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
-            { test: /\.(jpg|gif|png)$/, use: ['file-loader?limit=8000&name=images/[name].[hash:8].[ext]'] },
+            { test: /\.(jpg|gif|png)$/, use: ['url-loader?limit=8192&name=imgs/[name].[hash:8].[ext]'] },
+            // { test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/, use: ['url-loader?limit=10000&name=font/[name].[ext]'] },
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
@@ -30,22 +31,19 @@ module.exports = {
                 test: /\.less$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: [
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            localIdentName: '[local]',
-                            modules: true
-                        }
-                    }, 
-                    'autoprefixer-loader', 'less-loader']
+                    use: ["css-loader", 'autoprefixer-loader', 'less-loader']
                 })
             },
-            { test: /\.html$/, loader: 'html-withimg-loader' }
+            // { test: /\.html$/, loader: 'html-withimg-loader' }
         ]
     },
     resolve: {
-        extensions: ['.jsx','.js', '.json']
+        extensions: ['.jsx','.js', '.json'],
+        // alias: {
+        //   'src': path.resolve(__dirname, '../src'),
+        //   'assets': path.resolve(__dirname, '../src/assets'),
+        //   'scss': path.resolve(__dirname, '../src/scss')
+        // }
     },
     plugins: [
         new HtmlWebpackPlugin({

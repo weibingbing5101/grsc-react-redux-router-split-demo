@@ -10,11 +10,12 @@ module.exports = {
         'filename': '[name].[hash:8].js',
         chunkFilename: '[name].page.[hash:8].js',
         'path': path.resolve('dist'),
+        publicPath: './',
     },
     module: {
         rules: [
             { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
-            { test: /\.(jpg|gif|png)$/, use: ['file-loader?limit=8000&name=images/[name].[hash:8].[ext]'] },
+            { test: /\.(jpg|gif|png)$/, use: ['url-loader?limit=8192&name=imgs/[name].[hash:8].[ext]'] },
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
@@ -29,11 +30,16 @@ module.exports = {
                     use: ["css-loader", 'autoprefixer-loader', 'less-loader']
                 })
             },
-            { test: /\.html$/, loader: 'html-withimg-loader' }
+            // { test: /\.html$/, loader: 'html-withimg-loader' }
         ]
     },
     resolve: {
-        extensions: ['.jsx','.js', '.json']
+        extensions: ['.jsx','.js', '.json'],
+        // alias: {
+        //   'src': path.resolve(__dirname, '../src'),
+        //   'assets': path.resolve(__dirname, '../src/assets'),
+        //   'scss': path.resolve(__dirname, '../src/scss')
+        // }
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -41,7 +47,7 @@ module.exports = {
             inject: true
         }),
         new ExtractTextPlugin({
-            filename: "[name][hash:8].css",
+            filename: "[name].[hash:8].css",
             disable: false,
             allChunks: true,
         }),        
