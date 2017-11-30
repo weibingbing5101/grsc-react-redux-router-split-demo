@@ -15,7 +15,7 @@ const MixActions = _.extend({}, ReduxDemoActions);
 export default connect(
 	(state) => { return {counter: state.counter} },   
 
-	(dispatch) => { 
+	(dispatch) => {
 		return MixActions;
 	}   
 )(Counter);

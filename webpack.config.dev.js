@@ -31,11 +31,10 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: [
-                    // 'css-loader',
                     {
                         loader: 'css-loader',
                         options: {
-                            localIdentName: '[local]',    // [path][name][local][hash:base64:5]
+                            localIdentName: '[local]',
                             modules: true
                         }
                     }, 
@@ -46,7 +45,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.jsx','.js', '.json']  // 文件拓展名
+        extensions: ['.jsx','.js', '.json']
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -60,7 +59,7 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': '"dev"'   // 注入环境
+            'process.env.NODE_ENV': '"dev"'
         }),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({

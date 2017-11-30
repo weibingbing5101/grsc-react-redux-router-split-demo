@@ -7,8 +7,8 @@ module.exports = {
     'entry': './src/index.js',
     'devtool':'cheap-module-eval-source-map',
     'output': {
-        'filename': '[name].[hash:6].js',
-        chunkFilename: '[name].page.[hash:6].js',   //此处对应 router.js require.ensuer的配置
+        'filename': '[name].[hash:8].js',
+        chunkFilename: '[name].page.[hash:8].js',
         'path': path.resolve('dist'),
     },
     module: {
@@ -33,7 +33,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.jsx','.js', '.json']  // 文件拓展名
+        extensions: ['.jsx','.js', '.json']
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -41,12 +41,12 @@ module.exports = {
             inject: true
         }),
         new ExtractTextPlugin({
-            filename: "[name][hash].css",
+            filename: "[name][hash:8].css",
             disable: false,
             allChunks: true,
         }),        
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': '"prod"'   // 注入环境
+            'process.env.NODE_ENV': '"prod"'
         }),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
