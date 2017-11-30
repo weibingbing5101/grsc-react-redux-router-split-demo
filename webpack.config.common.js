@@ -8,7 +8,7 @@ module.exports = function(){
         'entry': './src/index.js',
         'output': {
             'filename': '[name].[hash:6].js',
-            chunkFilename: '[name].[hash:6].js',   //此处对应 router.js require.ensuer的配置
+            chunkFilename: '[name].page.[hash:6].js',   //此处对应 router.js require.ensuer的配置
             'path': path.resolve('dist'), // css js html打包存放的 绝对路径
         },
         module: {
@@ -65,6 +65,25 @@ module.exports = function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+// { test: /\.(jpg|gif|png)$/, use: [{
+//     loader: 'url-loader',
+//     options: {
+//         limit: '8192',
+//         name: 'imgs/[name].[hash:6].[ext]'
+//     }
+// }] },
 
 
 
