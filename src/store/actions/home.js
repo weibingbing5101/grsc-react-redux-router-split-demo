@@ -1,7 +1,7 @@
 import { store } from '../index.js';
 let dispatch = store.dispatch;
 
-export function add() {
+export function addd() {
     console.log(333);
     // return (dispatch, getState) => {
         // Http.post('trade/payTypeList',params).then(function (data) {
@@ -12,23 +12,23 @@ export function add() {
         //      });
         //    })
         setTimeout(()=>{
-            dispatch({ type: 'ADD' });
+            dispatch({ type: 'ADDD' });
         },1000)
         
     // }
 }
 
-export function sub() {
-    // return (dispatch, getState) => {
-        // Http.post('trade/payTypeList',params).then(function (data) {
-        //      dispatch({
-        //        type: 'payTypeList',
-        //        code: data.code,
-        //        data:  data.data
-        //      });
-        //    })
-        dispatch({ type: 'SUB' });
-    // }
-}
+// export function sub() {
+//     // return (dispatch, getState) => {
+//         // Http.post('trade/payTypeList',params).then(function (data) {
+//         //      dispatch({
+//         //        type: 'payTypeList',
+//         //        code: data.code,
+//         //        data:  data.data
+//         //      });
+//         //    })
+//         dispatch({ type: 'SUB' });
+//     // }
+// }
 
 

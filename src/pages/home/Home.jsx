@@ -16,7 +16,7 @@ class Home extends Component {
 			<div className={clname}>
 				<ul className="home-list">
 					<li className="home-list-item">{this.props.home.number}</li>
-					<li className="home-list-item">1</li>
+					<li className="home-list-item" onClick={()=>this.props.addd()}> + </li>
 					<li className="home-list-item">1</li>
 					<li className="home-list-item">1</li>
 					<li className="home-list-item">1</li>

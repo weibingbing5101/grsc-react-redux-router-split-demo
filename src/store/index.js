@@ -9,7 +9,6 @@ let reducer = combineReducers({
     home
 });
 
-
 let store = createStore(reducer);
 
 /*
