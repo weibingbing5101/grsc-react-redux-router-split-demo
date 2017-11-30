@@ -3,17 +3,6 @@ import {connect} from 'react-redux';
 
 var imgUrl = require('./imgs/js.png');
 
-
-// render() {
-//     return (<img src={require('./images/bg.jpg')} />);
-// }
-
-
-// var imgUrl = require('./images/bg.jpg'),
-//     imgTempl = '<img src="'+imgUrl+'" />';
-// document.body.innerHTML = imgTempl;
-
-
 import './Home.less';
 class Home extends Component {
 
@@ -54,3 +43,13 @@ class Home extends Component {
 
 
 export default Home
+
+// 关于图片处理的问题
+// render() {
+//     return (<img src={require('./images/bg.jpg')} />);
+// }
+
+
+// var imgUrl = require('./images/bg.jpg'),
+//     imgTempl = '<img src="'+imgUrl+'" />';
+// document.body.innerHTML = imgTempl;
