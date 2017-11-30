@@ -1,11 +1,11 @@
 const initState = {number: 10000};
 let home = (state = initState, action = {}) => {
+	console.log(state)
   switch (action.type) {
     case 'ADDD':
-    	console.log(state)
-      return {...state, home: state.number += 1};
+      return {...state, number: state.number + 1};
     case 'SUB':
-      return {...state, home: state.number - 1};
+      return {...state, number: state.number - 1};
     default:
       return state;
   }
