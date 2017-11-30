@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Home from './Home.jsx';
 
 // actions
-import * as ReduxDemoActions from '../../store/actions/home.js';
+import * as ReduxDemoActions from 'actions/home.js';
 
 import _ from 'lodash';
 

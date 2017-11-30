@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Counter from './Counter.jsx';
 
 // actions
-import * as ReduxDemoActions from '../../store/actions/counter.js';
+import * as ReduxDemoActions from 'actions/counter.js';
 
 import _ from 'lodash';
 

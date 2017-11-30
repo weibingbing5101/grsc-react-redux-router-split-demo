@@ -37,7 +37,7 @@ module.exports = function(){
             alias: {
               'store': path.resolve(__dirname, './src/store'),
               'actions': path.resolve(__dirname, './src/store/actions'),
-              'reducers': path.resolve(__dirname, '/src/store/reducers')
+              'reducers': path.resolve(__dirname, './src/store/reducers')
             }
         },
         plugins: [
