@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 
 var imgUrl = require('./imgs/js.png');
+var imgIcomUrl = require('./imgs/success.base64.png');
 
 import './Home.less';
 class Home extends Component {
@@ -25,7 +26,9 @@ class Home extends Component {
 					<li className="home-list-item">
 						<img src={imgUrl} />
 					</li>
-					<li className="home-list-item">1</li>
+					<li className="home-list-item">
+						<img src={imgIcomUrl} />
+					</li>
 					<li className="home-list-item">1</li>
 					<li className="home-list-item">1</li>
 					<li className="home-list-item">1</li>
