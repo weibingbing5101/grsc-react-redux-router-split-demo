@@ -1,13 +1,14 @@
 import {convertParamToQuery} from '../tools/index.js';
 
-export default class AjaxPromise {
-	static envUrl = {
-		dev: 'http://118.178.109.73/',
-		test: 'http://118.178.174.197/',
-		sit: 'https://campussit.alipay-eco.com/',
-		prod: 'https://campus.alipay-eco.com/'
-	}
+const envUrl = {
+	dev: 'http://118.178.109.73/',
+	test: 'http://118.178.174.197/',
+	sit: 'https://campussit.alipay-eco.com/',
+	prod: 'https://campus.alipay-eco.com/'
+};
+console.log('根据process.env.NODE_ENV 的不同    切换请求地址   ', envUrl[process.env.NODE_ENV])
 
+export default class AjaxPromise {
 	// 封装get请求
 	static get(url, body){
 		let queryUrl = url;
@@ -17,12 +18,12 @@ export default class AjaxPromise {
 		}
 		console.log(queryUrl);
 		return this.request(queryUrl, 'get', null);
-	}
+	};
 
 
 	static post(url, body){
 		return this.request(url, 'post', body);
-	}
+	};
 
 	static request(url, method, body){
 		let options = {
@@ -50,7 +51,7 @@ export default class AjaxPromise {
     		},3000);
 
 
-			fetch(this.envUrl.prod + url,  options)
+			fetch(envUrl[process.env.NODE_ENV] + url,  options)
 			.then((res) => { return res.json()})
 			.then((data)=>{
 				clearTimeout(timerOut);
@@ -66,7 +67,7 @@ export default class AjaxPromise {
 				})
 			})
 		})
-	}
+	};
 };
 
 

@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 
+import Api from 'api';
+
 var imgUrl = require('./imgs/js.png');
 var imgIcomUrl = require('./imgs/success.base64.png');
 
@@ -9,7 +11,7 @@ class Home extends Component {
 
 	constructor(props) {
 	  super(props);
-		console.log(this.props);
+		console.log('this.props',this.props);
 	  this.state = {isok: true};
 
 
@@ -17,8 +19,8 @@ class Home extends Component {
 	}
 
 	init(){
-		console.log(window.fetch)
-		console.log(process.env.NODE_ENV)
+		console.log('Api方法      ',Api)
+		console.log('window.fetch===',window.fetch)
 	}
 
 	render() {
