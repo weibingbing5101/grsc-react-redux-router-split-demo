@@ -11,6 +11,14 @@ class Home extends Component {
 	  super(props);
 		console.log(this.props);
 	  this.state = {isok: true};
+
+
+	  this.init() 
+	}
+
+	init(){
+		console.log(window.fetch)
+		console.log(process.env.NODE_ENV)
 	}
 
 	render() {

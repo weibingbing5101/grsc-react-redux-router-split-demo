@@ -11,7 +11,12 @@ module.exports = function(){
         commonConfig(),{
         'output': {
             publicPath: './'
-        }
+        },
+        plugins: [
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': '"prod"'
+            })
+        ],
     })
 }
 

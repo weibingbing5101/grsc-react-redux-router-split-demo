@@ -5,7 +5,7 @@ export default class AjaxPromise {
 		dev: 'http://118.178.109.73/',
 		test: 'http://118.178.174.197/',
 		sit: 'https://campussit.alipay-eco.com/',
-		pro: 'https://campus.alipay-eco.com/'
+		prod: 'https://campus.alipay-eco.com/'
 	}
 
 	// 封装get请求
@@ -50,7 +50,7 @@ export default class AjaxPromise {
     		},3000);
 
 
-			fetch(this.envUrl.pro + url,  options)
+			fetch(this.envUrl.prod + url,  options)
 			.then((res) => { return res.json()})
 			.then((data)=>{
 				clearTimeout(timerOut);
